@@ -2,6 +2,7 @@
 @use '/src/styles/constants/levels';
 @use '/src/styles/mixins/flexbox';
 @use '/src/styles/mixins/position';
+@use '/src/styles/mixins/visual';
 
 .todoList {
   position: relative;
@@ -10,6 +11,7 @@
   padding: 120px 40px 40px;
   background-color: #fafbfe;
   border-radius: 60px;
+  // @include visual.noScrollbar();
 
   h1 {
     font-size: 32px;
@@ -26,6 +28,11 @@
     letter-spacing: 0.05em;
   }
 
+  .tasks {
+    height: 378px;
+    overflow: auto;
+  }
+
   .task {
     display: flex;
     align-items: center;
@@ -34,7 +41,7 @@
     background-color: colors.$WHITE;
     border-radius: 32px;
     box-shadow: 0 10px 20px 0 rgba(colors.$BLACK, 2%);
-
+    cursor: pointer;
     + .task {
       margin-top: 18px;
     }
@@ -69,6 +76,7 @@
       &:checked {
         background-color: colors.$BLUE;
         border: 0;
+        text-decoration: line-through;
 
         ~ svg {
           opacity: 1;
