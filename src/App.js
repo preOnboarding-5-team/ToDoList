@@ -1,5 +1,5 @@
-import { LogoImage } from './assets/svgs'
-import './App.scss'
+import { LogoImage } from './assets/svgs';
+import './App.scss';
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
         </a>
       </header>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
