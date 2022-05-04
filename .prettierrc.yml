@@ -2,6 +2,9 @@
 # jsxSingleQuote: true
 =======
 jsxSingleQuote: true
+<<<<<<< HEAD
+>>>>>>> 9df27f5e69400c3b074ed780b4d784a6e5f15bac
+=======
 >>>>>>> 9df27f5e69400c3b074ed780b4d784a6e5f15bac
 # semi: false
 printWidth: 120
