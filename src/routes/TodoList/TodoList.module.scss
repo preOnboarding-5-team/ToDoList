@@ -2,6 +2,7 @@
 @use '/src/styles/constants/levels';
 @use '/src/styles/mixins/flexbox';
 @use '/src/styles/mixins/position';
+@use '/src/styles/mixins/visual';
 
 .todoListWrapper {
   // position: relative;
