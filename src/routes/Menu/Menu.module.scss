@@ -31,4 +31,23 @@
       object-fit: cover;
     }
   }
+
+  .menusTitle {
+    margin: 10px 0 10px;
+    font-size: 13px;
+    font-weight: 300;
+    color: colors.$GRAYD;
+    letter-spacing: 0.05em;
+  }
+
+  .menulist {
+    margin-top: 30px;
+  }
+
+  .userMenu {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    margin: 12px 0 12px 0;
+  }
 }
