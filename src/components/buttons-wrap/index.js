@@ -3,21 +3,15 @@ import BasicButton from '../basic-button';
 import { FolderIcon, FlagIcon, MoonIcon } from '../../assets/svgs';
 import cn from 'classnames';
 import DateButton from '../date-button';
-
 import ButtonChoiceColor from '../button-choiceColor';
-import ModalPalette from '../modal_palette';
-import { useState } from 'react';
 
 function ButtonsWrap() {
-  const [selectColor, setSelectColor] = useState('blue');
-  const [isPaletteOpen, setIsPaletteOpen] = useState(false);
-
   return (
-    <div className={styles.buttonWraps}>
+    <div>
       <div className={cn(styles.buttonsWrapper)}>
         <DateButton />
         <div className={cn(styles.button)}>
-          <ButtonChoiceColor changeColor={selectColor} onClickButton={setIsPaletteOpen} />
+          <ButtonChoiceColor />
         </div>
       </div>
       <div className={cn(styles.wrapButtons)}>
@@ -25,7 +19,6 @@ function ButtonsWrap() {
         <BasicButton SVGIcon={FlagIcon} outline={false} />
         <BasicButton SVGIcon={MoonIcon} outline={false} />
       </div>
-      <ModalPalette onChangeColor={setSelectColor} isOpen={isPaletteOpen} />
     </div>
   );
 }

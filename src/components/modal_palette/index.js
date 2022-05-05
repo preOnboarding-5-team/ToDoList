@@ -19,35 +19,6 @@ export default function ModalPalette({ onChangeColor, isOpen }) {
           key={`${color}-color`}
         />
       ))}
-
-      {/* <button
-        className={cn(styles.colorChip, styles.red)}
-        type="button"
-        aria-label="Red color button"
-        data-color="RED"
-        onClick={choiceColor}
-      />
-      <button
-        className={cn(styles.colorChip, styles.orange)}
-        type="button"
-        aria-label="Orange color button"
-        data-color="ORANGE"
-        onClick={choiceColor}
-      />
-      <button
-        className={cn(styles.colorChip, styles.yellow)}
-        type="button"
-        aria-label="Yellow color button"
-        data-color="YELLOW"
-        onClick={choiceColor}
-      />
-      <button
-        className={cn(styles.colorChip, styles.green)}
-        type="button"
-        aria-label="Green color button"
-        data-color="GREEN"
-        onClick={choiceColor}
-      /> */}
     </div>
   );
 }
