@@ -2,10 +2,12 @@
 @use '/src/styles/constants/levels';
 @use '/src/styles/mixins/flexbox';
 @use '/src/styles/mixins/position';
+@use '/src/styles/mixins/animation';
 
 .taskInput {
   width: 280px;
   margin-bottom: 48px;
+  @include animation.fadeInSlide(1s, 200ms);
 
   input {
     width: 280px;

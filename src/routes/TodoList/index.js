@@ -56,7 +56,7 @@ function TodoList() {
         </ul>
         <AddButton isWriting={isWriting} setIsWriting={setIsWriting} />
       </div>
-      {isWriting && <TodoWrite setIsWriting={setIsWriting} />}
+      {isWriting && <TodoWrite todoList={todoList} setTodoList={setTodoList} setIsWriting={setIsWriting} />}
     </div>
   );
 }

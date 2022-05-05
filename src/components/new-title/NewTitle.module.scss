@@ -1,0 +1,85 @@
+@use '/src/styles/mixins/position';
+@use '/src/styles/mixins/flexbox';
+@use '/src/styles/constants/levels';
+@use '/src/styles/constants/colors';
+
+
+.submitTitleWrapper {
+  @include position.absolute(0 auto auto auto);
+  width: 360px;
+  height: 720px;
+  padding: 60px 40px 40px;
+  background-color: colors.$BACKGROUND;
+  z-index: levels.$TRANSITION_EXPANDED;
+  transition: 1s;
+}
+
+.submitCanceled {
+  opacity: 0;
+}
+
+.submitTitleWrapperVisible {
+  @include position.absolute(250px auto auto auto);
+  width: 280px;
+  height: 72px;
+  padding: 0;
+  border-radius: 66px;
+  border: 1px solid balck;
+  z-index: levels.$MODAL;
+  background-color: colors.$WHITE;
+}
+
+.submittedTitleHidden {
+  @include position.absolute(25% auto auto 0);
+  width: 360px;
+  height: 92px;
+  line-height: 92px;
+  font-size: 28px;
+  color: colors.$BLACK;
+  background-color: #fafbfe;
+  z-index: levels.$MODAL;
+  overflow: hidden;
+  visibility: hidden;
+  transition: 1s;
+}
+
+.submittedTitleVisible {
+  visibility: visible;
+  background-color: colors.$WHITE;
+}
+
+.submittedTitleOn {
+  @include position.absolute(0 auto auto 0);
+  @include flexbox.flexbox(center center);
+  width: 280px;
+  height: 72px;
+  line-height: 72px;
+  padding: 0 72px;
+  font-size: 17px;
+  border-radius: 66px;
+
+  .checkboxWrapper {
+    @include position.absolute(auto auto auto 25px);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid colors.$BLUE;
+    z-index: levels.$MODAL;
+    animation: 1s fadeIn;
+  }
+
+  span {
+    position: relative;
+    left: 4px;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}

@@ -12,3 +12,21 @@
     transform: rotate(359deg);
   }
 }
+
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-5%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@mixin fadeInSlide($duration, $delay) {
+  animation: $duration fadeInSlide;
+  animation-delay: $delay;
+  animation-fill-mode: both;
+}
