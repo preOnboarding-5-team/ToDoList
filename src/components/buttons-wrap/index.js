@@ -7,7 +7,7 @@ import ButtonChoiceColor from '../button-choiceColor';
 
 function ButtonsWrap() {
   return (
-    <div>
+    <div className={styles.buttonWraps}>
       <div className={cn(styles.buttonsWrapper)}>
         <DateButton />
         <div className={cn(styles.button)}>
