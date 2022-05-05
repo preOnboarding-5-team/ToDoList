@@ -1,0 +1,48 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/mixins/position';
+
+.buttonSubmit {
+  @include position.absolute(auto 40px 40px auto);
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  align-content: center;
+  width: 150px;
+  height: 66px;
+  padding: 0 10px;
+  background-color: colors.$BLUE;
+  border-radius: 33px;
+  box-shadow: 0 10px 20px 0 rgba(colors.$BLACK, 15%);
+  transition: 0.2s;
+
+  &:hover {
+    background-color: rgba(colors.$BLUE, 85%);
+  }
+
+  .title {
+    color: colors.$WHITE;
+  }
+
+  .icon {
+    position: relative;
+    width: 20px;
+    height: 20px;
+
+    &::after,
+    &::before {
+      @include position.middleBox;
+      width: 12px;
+      height: 2px;
+      content: '';
+      background-color: colors.$WHITE;
+      transform-origin: center;
+    }
+
+    &::after {
+      transform: rotate(45deg);
+    }
+
+    &::before {
+      transform: translateX(-68%) rotate(-45deg);
+    }
+  }
+}

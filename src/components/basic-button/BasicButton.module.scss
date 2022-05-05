@@ -1,0 +1,29 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/constants/levels';
+@use '/src/styles/mixins/flexbox';
+@use '/src/styles/mixins/position';
+
+.basicButton {
+  // @include position.posCenterX;
+  position: relative;
+  width: 48px;
+  height: 48px;
+  font-size: 16px;
+  border-radius: 24px;
+
+  .svgWrap {
+    width: 28px;
+    height: 28px;
+    margin: 0 auto;
+  }
+}
+
+// .outline {
+//   border: 2px solid colors.$BUTTON_BORDER;
+//   border-radius: 24px;
+//   transition: 0.2s;
+
+//   &:hover {
+//     border: 2px solid rgba(colors.$TASK_ITEM_TITLE, 70%);
+//   }
+// }

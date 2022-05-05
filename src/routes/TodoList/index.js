@@ -1,6 +1,8 @@
-import { useState } from 'react'
-import styles from './TodoList.module.scss'
-import { CheckIcon } from '../../assets/svgs'
+import { useState } from 'react';
+import styles from './TodoList.module.scss';
+import { CheckIcon } from '../../assets/svgs';
+import AddButton from '../../components/button-add';
+import TodoWrite from '../TodoWrite';
 
 const INIT_TODO = [
   {
@@ -18,26 +20,23 @@ const INIT_TODO = [
     title: '오늘의 TIL 작성하기',
     done: false,
   },
-]
+];
 
 function TodoList() {
-  const [todoList, setTodoList] = useState(INIT_TODO)
-
-  const handleAddClick = (e) => {
-    // console.log('handleAddClick')
-  }
+  const [todoList, setTodoList] = useState(INIT_TODO);
+  const [isWriting, setIsWriting] = useState(false);
 
   const handleChange = (e) => {
-    const { dataset, checked } = e.currentTarget
-    const { id } = dataset
+    const { dataset, checked } = e.currentTarget;
+    const { id } = dataset;
 
     setTodoList((prev) => {
-      const targetIndex = prev.findIndex((todo) => todo.id === Number(id))
-      const newList = [...prev]
-      newList[targetIndex].done = checked
-      return newList
-    })
-  }
+      const targetIndex = prev.findIndex((todo) => todo.id === Number(id));
+      const newList = [...prev];
+      newList[targetIndex].done = checked;
+      return newList;
+    });
+  };
 
   return (
     <div className={styles.todoList}>
@@ -48,17 +47,18 @@ function TodoList() {
           {todoList.map((todo) => (
             <li key={`todo-${todo.id}`} className={styles.task}>
               <div className={styles.checkboxWrapper}>
-                <input type='checkbox' checked={todo.done} data-id={todo.id} onChange={handleChange} />
+                <input type="checkbox" checked={todo.done} data-id={todo.id} onChange={handleChange} />
                 <CheckIcon />
               </div>
               <p className={styles.title}>{todo.title}</p>
             </li>
           ))}
         </ul>
-        <button type='button' className={styles.addButton} onClick={handleAddClick} aria-label='Add button' />
+        <AddButton isWriting={isWriting} setIsWriting={setIsWriting} />
       </div>
+      {isWriting && <TodoWrite setIsWriting={setIsWriting} />}
     </div>
-  )
+  );
 }
 
-export default TodoList
+export default TodoList;

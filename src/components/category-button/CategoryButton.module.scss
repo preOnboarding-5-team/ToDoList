@@ -1,0 +1,35 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/constants/levels';
+@use '/src/styles/mixins/flexbox';
+@use '/src/styles/mixins/position';
+
+.categoryButton {
+  width: 48px;
+  height: 48px;
+
+  button {
+    @include flexbox.flexbox(center center);
+    position: relative;
+    width: 48px;
+    height: 48px;
+    font-size: 16px;
+    border: 2px solid colors.$BUTTON_BORDER;
+    border-radius: 24px;
+
+    .categoryColorOutline {
+      @include position.middleBox;
+      width: 28px;
+      height: 28px;
+      border: 2px solid colors.$BLUE;
+      border-radius: 16px;
+    }
+
+    .categoryColor {
+      @include position.middleBox;
+      width: 16px;
+      height: 16px;
+      background-color: colors.$BLUE;
+      border-radius: 16px;
+    }
+  }
+}

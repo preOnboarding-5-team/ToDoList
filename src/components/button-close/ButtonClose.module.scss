@@ -1,0 +1,41 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/mixins/position';
+
+.buttonClose {
+  @include position.absolute(40px 40px auto auto);
+  width: 48px;
+  height: 48px;
+  border: 2px solid colors.$BUTTON_BORDER;
+  border-radius: 50%;
+  box-shadow: 0 0 5px 0 rgba(colors.$BLACK, 10%);
+  transition: 0.1s;
+
+  &:hover {
+    border-width: 1.5px;
+
+    &::before,
+    &::after {
+      height: 1.5px;
+    }
+  }
+
+  &::before,
+  &::after {
+    /* stylelint-disable-next-line scss/at-mixin-argumentless-call-parentheses */
+    @include position.middleBox();
+    width: 20px;
+    height: 1px;
+    content: '';
+    background-color: colors.$BLACK;
+    transition: 0.1s;
+    transform-origin: center;
+  }
+
+  &::after {
+    transform: translateX(-50%) rotate(45deg);
+  }
+
+  &::before {
+    transform: translateX(-50%) rotate(-45deg);
+  }
+}
