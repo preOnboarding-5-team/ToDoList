@@ -2,33 +2,37 @@
 @use '/src/styles/constants/levels';
 @use '/src/styles/mixins/flexbox';
 @use '/src/styles/mixins/position';
+@use '/src/styles/mixins/animation';
 
-.buttonsWrapper {
-  @include flexbox.flexbox(center center);
-  height: 48px;
-  // animation: 1s slideOnMount;
+.buttonWraps {
+  @include animation.fadeInSlide(1s, 350ms);
 
-  .button {
-    // svg {
-    //   color: colors.$BLUE;
+  .buttonsWrapper {
+    @include flexbox.flexbox(center center);
+    height: 48px;
+
+    // .button {
+      // svg {
+      //   color: colors.$BLUE;
+      // }
     // }
-  }
 
-  .blue {
-    svg {
-      color: colors.$BLUE;
+    .blue {
+      svg {
+        color: colors.$BLUE;
+      }
     }
   }
-}
 
-.wrapButtons {
-  @include flexbox.flexbox(center center);
-  @include position.posCenterX;
-  justify-content: space-between;
-  width: 200px;
-  margin-top: 80px;
+  .wrapButtons {
+    @include position.posCenterX;
+    @include flexbox.flexbox(center center);
+    justify-content: space-between;
+    width: 200px;
+    margin-top: 80px;
 
-  svg {
-    color: colors.$TASKS_TITLE;
+    svg {
+      color: colors.$TASKS_TITLE;
+    }
   }
 }

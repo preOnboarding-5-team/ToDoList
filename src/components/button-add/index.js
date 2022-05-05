@@ -12,7 +12,7 @@ export default function ButtonAdd({ isWriting, setIsWriting }) {
 
   useEffect(() => {
     setExpands(isWriting);
-    setTimeout(() => setExpands(false), 1000);
+    setTimeout(() => setExpands(false), 1500);
   }, [isWriting]);
 
   return (
