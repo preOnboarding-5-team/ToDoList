@@ -1,0 +1,51 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/constants/levels';
+@use '/src/styles/mixins/flexbox';
+@use '/src/styles/mixins/position';
+
+.card {
+  width: 170px;
+  height: 100px;
+  padding: 0 15px;
+  background-color: colors.$WHITE;
+  border-radius: 30px;
+  box-shadow: 0 10px 20px 0 rgba(colors.$BLACK, 2%);
+
+  + .card {
+    margin-left: 18px;
+  }
+}
+
+.totalTasks {
+  margin: 25px 0 5px;
+  font-size: 11px;
+  font-weight: 600;
+  color: colors.$TASKS_TITLE;
+  letter-spacing: 0.05em;
+}
+
+.categoryTitle {
+  margin-bottom: 15px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.slider {
+  position: relative;
+  width: 140px;
+}
+
+.sliderBase {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: colors.$SLIDER_BASE;
+  border-radius: 3px;
+}
+
+.sliderColor {
+  position: absolute;
+  height: 3px;
+  background-color: colors.$BLUE;
+  border-radius: 3px;
+}
