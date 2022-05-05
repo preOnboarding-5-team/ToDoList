@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 import { useState } from 'react';
 import styles from './TodoList.module.scss';
 import { CheckIcon } from '../../assets/svgs';
@@ -58,35 +56,9 @@ function TodoList() {
           ))}
         </ul>
         <button type="button" className={styles.addButton} onClick={handleAddClick} aria-label="Add button" />
-=======
-import styles from './TodoList.module.scss';
-import Task from '../../components/task/Task';
-
-function TodoList() {
-  return (
-    <div className={styles.todoList}>
-      <div className={styles.centering}>
-        <Task />
->>>>>>> 9df27f5e69400c3b074ed780b4d784a6e5f15bac
-=======
-import styles from './TodoList.module.scss';
-import Task from '../../components/task/Task';
-
-function TodoList() {
-  return (
-    <div className={styles.todoList}>
-      <div className={styles.centering}>
-        <Task />
->>>>>>> 9df27f5e69400c3b074ed780b4d784a6e5f15bac
       </div>
     </div>
   );
-}
-<<<<<<< HEAD
-=======
+} 
 
-<<<<<<< HEAD
->>>>>>> 9df27f5e69400c3b074ed780b4d784a6e5f15bac
-=======
->>>>>>> 9df27f5e69400c3b074ed780b4d784a6e5f15bac
 export default TodoList;
