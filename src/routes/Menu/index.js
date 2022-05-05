@@ -1,7 +1,7 @@
 import styles from './Menu.module.scss';
-import UserProfile from '../../components/menu/UserProfile';
-import MenuList from '../../components/menu/MenuList';
-import CloseMenuButton from '../../components/menu/CloseMenuButton';
+import UserProfile from '../../components/userprofile/UserProfile';
+import MenuList from '../../components/menulist/MenuList';
+import CloseMenuButton from '../../components/closemenubutton/CloseMenuButton';
 
 function Menu() {
   return (
