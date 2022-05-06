@@ -5,7 +5,7 @@ import Category from '../../components/category/Category';
 
 function TodoList({ INIT_TODO, CATEGORIES }) {
   const [todoList, setTodoList] = useState(INIT_TODO);
-  const [categories, setCategories] = useState(CATEGORIES);
+  const [categories] = useState(CATEGORIES);
 
   const handleAddClick = () => {
     // console.log('handleAddClick')
