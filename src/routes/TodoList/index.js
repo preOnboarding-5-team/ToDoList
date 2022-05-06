@@ -1,4 +1,3 @@
-import { useState, useRef } from 'react';
 import styles from './TodoList.module.scss';
 import Task from  '../../components/task/Task';
 
