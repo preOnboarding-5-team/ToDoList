@@ -1,0 +1,52 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/constants/levels';
+@use '/src/styles/mixins/flexbox';
+@use '/src/styles/mixins/position';
+
+.card {
+  display: inline-block;
+  width: 60%;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(black, 0.2);
+
+  &:not(:first-child) {
+    margin-left: 20px;
+  }
+}
+
+.totalTasks {
+  margin: 10px 0 10px;
+  font-size: 11px;
+  font-weight: 600;
+  color: colors.$TASKS_TITLE;
+  letter-spacing: 0.05em;
+}
+
+.categoryTitle {
+  margin-bottom: 10px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.percentage {
+  margin-top: 5px;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.progress {
+  position: relative;
+  width: 100%;
+  height: 10px;
+  background-color: rgba(colors.$GRAY2, 0.1);
+  border-radius: 10px;
+
+  .progressBar {
+    position: absolute;
+    display: block;
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.2s;
+  }
+}
