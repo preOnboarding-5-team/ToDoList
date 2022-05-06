@@ -1,12 +1,11 @@
 import styles from './DateButton.module.scss';
-import { CalendarIcon } from '../../assets/svgs';
 import cn from 'classnames';
 
-export default function DateButton({ onClick }) {
+export default function DateButton({ SVGIcon }) {
   return (
-    <button type="button" className={cn(styles.dateButton)} onClick={onClick}>
+    <button type="button" className={cn(styles.dateButton)}>
       <div className={cn(styles.dateButtonWrapper)}>
-        <CalendarIcon />
+        <SVGIcon />
         <p className={cn(styles.title)}>Today</p>
       </div>
     </button>

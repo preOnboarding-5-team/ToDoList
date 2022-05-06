@@ -1,17 +1,17 @@
 import styles from './ButtonsWrap.module.scss';
 import BasicButton from '../basic-button';
-import { FolderIcon, FlagIcon, MoonIcon } from '../../assets/svgs';
+import { FolderIcon, FlagIcon, MoonIcon, CalendarIcon } from '../../../assets/svgs';
 import cn from 'classnames';
 import DateButton from '../date-button';
 import ButtonChoiceColor from '../button-choiceColor';
 
-function ButtonsWrap() {
+function ButtonsWrap({ setNewTask, category }) {
   return (
     <div className={styles.buttonWraps}>
       <div className={cn(styles.buttonsWrapper)}>
-        <DateButton />
+        <DateButton SVGIcon={CalendarIcon} />
         <div className={cn(styles.button)}>
-          <ButtonChoiceColor />
+          <ButtonChoiceColor setNewTask={setNewTask} CATEGORY={category} />
         </div>
       </div>
       <div className={cn(styles.wrapButtons)}>

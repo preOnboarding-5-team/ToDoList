@@ -4,21 +4,25 @@
 @use '/src/styles/mixins/position';
 
 .buttonChoiceColor {
-  width: 48px;
-  height: 48px;
+  width: 100px;
+  height: 42px;
   font-size: 16px;
   border: 2px solid colors.$BUTTON_BORDER;
   border-radius: 24px;
   transition: 0.2s;
 
   .svgWrap {
-    width: 28px;
-    height: 28px;
-    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      width: 50px;
+      font-size: 14px;
+    }
   }
 
   &:hover {
-    // border: 2px solid rgba(colors.$TASK_ITEM_TITLE, 70%);
     background-color: colors.$BUTTON_BORDER;
   }
 }

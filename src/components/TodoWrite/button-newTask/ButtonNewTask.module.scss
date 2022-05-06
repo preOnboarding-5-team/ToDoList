@@ -22,10 +22,16 @@
 
   .buttonTitle {
     @include flexbox.flexbox(center center);
-    margin: 0 20px;
+    justify-content: center;
 
     .title {
-      width: 110px;
+      width: 95px;
     }
   }
+}
+
+.buttonNewTaskInactive {
+  pointer-events: none;
+  background-color: rgba(colors.$BLACK, 20%);
+  box-shadow: none;
 }

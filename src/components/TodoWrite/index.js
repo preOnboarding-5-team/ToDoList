@@ -1,13 +1,13 @@
 import cn from 'classnames';
 import { useState } from 'react';
 import styles from './TodoWrite.module.scss';
-import TaskInput from '../../components/task-input';
-import ButtonsWrap from '../../components/buttons-wrap';
-import ButtonClose from '../../components/button-close';
-import ButtonNewTask from '../../components/button-newTask';
-import NewTitle from '../../components/new-title';
+import TaskInput from './task-input';
+import ButtonsWrap from './buttons-wrap';
+import ButtonClose from './button-close';
+import ButtonNewTask from './button-newTask';
+import NewTitle from './new-title';
 
-function TodoWrite({ todoList, setTodoList, setIsWriting }) {
+function TodoWrite({ todoList, setTodoList, setIsWriting, CATEGORY }) {
   const [isClosing, setIsClosing] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isMoving, setIsMoving] = useState(false);
@@ -16,6 +16,7 @@ function TodoWrite({ todoList, setTodoList, setIsWriting }) {
   const [newTask, setNewTask] = useState({
     id: todoList.length + 1,
     title: '',
+    category: '운동',
     done: false,
   });
 
@@ -53,9 +54,9 @@ function TodoWrite({ todoList, setTodoList, setIsWriting }) {
         <ButtonClose onClick={handleCloseClick} />
         <div className={cn(styles.centering)}>
           <TaskInput setNewTask={setNewTask} />
-          <ButtonsWrap />
+          <ButtonsWrap setNewTask={setNewTask} category={CATEGORY} />
         </div>
-        <ButtonNewTask onClick={submitTaskValue} />
+        <ButtonNewTask isValid={!!newTask.title} onClick={submitTaskValue} />
       </div>
       <NewTitle
         newTask={newTask}
@@ -64,6 +65,7 @@ function TodoWrite({ todoList, setTodoList, setIsWriting }) {
         isSubmitted={isSubmitted}
         hasMoved={hasMoved}
         isCanceled={isCanceled}
+        categoryValue={CATEGORY}
       />
     </>
   );

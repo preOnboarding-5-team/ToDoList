@@ -1,6 +1,6 @@
 import styles from './ButtonClose.module.scss';
 import cn from 'classnames';
-import { CloseIcon } from '../../assets/svgs';
+import { CloseIcon } from '../../../assets/svgs';
 
 export default function ButtonClose({ onClick }) {
   return (

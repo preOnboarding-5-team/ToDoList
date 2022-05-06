@@ -4,8 +4,8 @@
 @use '/src/styles/mixins/position';
 
 .dateButton {
-  width: 144px;
-  height: 48px;
+  width: 135px;
+  height: 42px;
   margin-right: 8px;
   font-size: 18px;
   color: colors.$TASKS_TITLE;
@@ -15,18 +15,17 @@
 
   &:hover {
     color: rgba(colors.$TASK_ITEM_TITLE, 70%);
-    // border: 2px solid rgba(colors.$TASK_ITEM_TITLE, 70%);
     background-color: colors.$BUTTON_BORDER;
   }
 
   .dateButtonWrapper {
     display: flex;
     align-items: center;
-    width: 144px;
-    margin: 0 28px;
+    justify-content: center;
+    width: 135px;
 
     .title {
-      width: 72px;
+      width: 70px;
     }
   }
 }

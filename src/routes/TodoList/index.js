@@ -2,27 +2,9 @@ import { useState } from 'react';
 import styles from './TodoList.module.scss';
 import { CheckIcon } from '../../assets/svgs';
 import AddButton from '../../components/button-add';
-import TodoWrite from '../TodoWrite';
+import TodoWrite from '../../components/TodoWrite';
 
-const INIT_TODO = [
-  {
-    id: 1,
-    title: '계란 2판 사기',
-    done: false,
-  },
-  {
-    id: 2,
-    title: '맥북 프로 M1 Max CTO 버전 사기',
-    done: false,
-  },
-  {
-    id: 3,
-    title: '오늘의 TIL 작성하기',
-    done: false,
-  },
-];
-
-function TodoList() {
+function TodoList({ INIT_TODO, CATEGORY }) {
   const [todoList, setTodoList] = useState(INIT_TODO);
   const [isWriting, setIsWriting] = useState(false);
 
@@ -47,7 +29,18 @@ function TodoList() {
           {todoList.map((todo) => (
             <li key={`todo-${todo.id}`} className={styles.task}>
               <div className={styles.checkboxWrapper}>
-                <input type="checkbox" checked={todo.done} data-id={todo.id} onChange={handleChange} />
+                <input
+                  type="checkbox"
+                  checked={todo.done}
+                  data-id={todo.id}
+                  onChange={handleChange}
+                  style={{
+                    border: `2px solid ${CATEGORY.find((v) => v.category === todo.category).color}`,
+                    backgroundColor: todo.done
+                      ? `${CATEGORY.find((v) => v.category === todo.category).color}`
+                      : 'transparent',
+                  }}
+                />
                 <CheckIcon />
               </div>
               <p className={styles.title}>{todo.title}</p>
@@ -56,7 +49,9 @@ function TodoList() {
         </ul>
         <AddButton isWriting={isWriting} setIsWriting={setIsWriting} />
       </div>
-      {isWriting && <TodoWrite todoList={todoList} setTodoList={setTodoList} setIsWriting={setIsWriting} />}
+      {isWriting && (
+        <TodoWrite todoList={todoList} setTodoList={setTodoList} setIsWriting={setIsWriting} CATEGORY={CATEGORY} />
+      )}
     </div>
   );
 }
