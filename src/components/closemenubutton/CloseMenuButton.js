@@ -1,7 +1,7 @@
 import styles from '../../routes/Menu/Menu.module.scss';
 
-function CloseMenuButton() {
-  return <button type='button' className={styles.closeMenuButton} aria-label='Close menu button' />;
+function CloseMenuButton({handleOpenMenu}) {
+  return <button type='button' className={styles.closeMenuButton} aria-label='Close menu button' onClick={handleOpenMenu} />;
 }
 
 export default CloseMenuButton;

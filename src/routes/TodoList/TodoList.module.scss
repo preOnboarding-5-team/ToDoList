@@ -4,14 +4,6 @@
 @use '/src/styles/mixins/position';
 @use '/src/styles/mixins/visual';
 
-.todoListWrapper {
-  // position: relative;
-  width: 360px;
-  height: 720px;
-  background-color: #0b2350;
-  border-radius: 60px;
-  clip-path: inset(0% 0% round 60px);
-
   .todoList {
     position: relative;
     width: 360px;
@@ -21,6 +13,7 @@
     border-radius: 60px;
     overflow: hidden;
     transition: all 0.3s;
+    clip-path: inset(0% 0% round 60px);
 
     .menuIconWrapper {
       position: relative;
@@ -142,4 +135,3 @@
       }
     }
   }
-}

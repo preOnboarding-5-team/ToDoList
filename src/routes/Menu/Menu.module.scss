@@ -4,12 +4,13 @@
 @use '/src/styles/mixins/position';
 
 .menu {
-  position: relative;
+  position: fixed;
   width: 360px;
   height: 720px;
   padding: 120px 40px 40px;
-  background-color: #131f53;
+  background-color: #0b2350;
   border-radius: 60px;
+  clip-path: inset(0% 0% round 60px);
 
   h1 {
     margin: 0 0 10px;
