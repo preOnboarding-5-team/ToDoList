@@ -2,7 +2,6 @@
 @use '/src/styles/constants/levels';
 @use '/src/styles/mixins/flexbox';
 @use '/src/styles/mixins/position';
-@use '/src/styles/mixins/visual';
 
   .todoList {
     position: relative;
@@ -32,7 +31,6 @@
         z-index: levels.$CHECK_BOX;
         cursor: pointer;
       }
-    }
 
     h1 {
       font-size: 32px;
@@ -134,4 +132,5 @@
         transform-origin: center;
       }
     }
+  }
   }
