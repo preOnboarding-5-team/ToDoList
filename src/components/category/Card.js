@@ -8,7 +8,7 @@ export default function Card(prop) {
   return (
     <div className={styles.card}>
       <p className={styles.totalTasks}>{todo.length} tasks</p>
-      <p className={styles.categoryTitle}>{todo[0].category}</p>
+      <p className={styles.categoryTitle}>{todo[0]?.category}</p>
       <div className={styles.progress}>
         <span
           className={styles.progressBar}

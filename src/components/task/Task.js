@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import styles from './Task.module.scss';
 import { CheckIcon } from '../../assets/svgs';
 import DeleteIcon from '../../assets/pngs/delete.png';
@@ -105,7 +105,36 @@ function Task({ todoList, setTodoList, categories }) {
     );
   });
 
-  return <ul className={styles.taskContainer}>{list}</ul>;
+  const containerRef = useRef();
+
+  let position = { top: 0, y: 0 };
+
+  const onMouseMove = (e) => {
+    const y = e.clientY - position.y;
+    if (Math.abs(y) > 15) {
+      containerRef.current.scrollTop = position.top - y;
+    }
+  };
+
+  const onMouseUp = () => {
+    document.removeEventListener('mousemove', onMouseMove);
+    document.removeEventListener('mouseup', onMouseUp);
+  };
+
+  const onMouseDown = (e) => {
+    position = {
+      top: containerRef.current.scrollTop,
+      y: e.clientY,
+    };
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', onMouseUp);
+  };
+
+  return (
+    <ul ref={containerRef} onMouseDown={onMouseDown} role="presentation" className={styles.taskContainer}>
+      {list}
+    </ul>
+  );
 }
 
 export default Task;
