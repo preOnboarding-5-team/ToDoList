@@ -40,9 +40,12 @@ function Category({ categories, todoList }) {
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div ref={containerRef} className={styles.container} onMouseDown={onMouseDown}>
       {Object.keys(categoryList).map((category, idx) => {
-        const key = `card-key-${idx}`;
-        const { color } = categories.find((list) => list.category === category);
-        return <Card key={key} color={color} todo={categoryList[category]} />;
+        if (categoryList[category].length) {
+          const key = `card-key-${idx}`;
+          const { color } = categories.find((list) => list.category === category);
+          return <Card key={key} color={color} todo={categoryList[category]} />;
+        }
+        return '';
       })}
     </div>
   );
