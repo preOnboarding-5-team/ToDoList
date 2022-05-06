@@ -31,17 +31,19 @@ function Category({ categories, todoList }) {
 
   useEffect(() => {
     categories.forEach((category) => {
-      const card = todoList.filter((todo) => todo.category === category);
-      setCategoryList((prev) => ({ ...prev, [category]: card }));
+      const card = todoList.filter((todo) => todo.category === category.category);
+      setCategoryList((prev) => ({ ...prev, [category.category]: card }));
     });
   }, [categories, todoList]);
 
   return (
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div ref={containerRef} className={styles.container} onMouseDown={onMouseDown}>
-      {Object.keys(categoryList).map((category) => (
-        <Card todo={categoryList[category]} />
-      ))}
+      {Object.keys(categoryList).map((category, idx) => {
+        const key = `card-key-${idx}`;
+        const { color } = categories.find((list) => list.category === category);
+        return <Card key={key} color={color} todo={categoryList[category]} />;
+      })}
     </div>
   );
 }

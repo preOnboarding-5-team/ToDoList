@@ -1,8 +1,7 @@
-import { useState } from 'react';
 import styles from './Card.module.scss';
 
 export default function Card(prop) {
-  const { todo } = prop;
+  const { todo, color } = prop;
   const done = todo.filter((todoItem) => todoItem.done).length;
   const percent = (done / todo.length) * 100;
 
@@ -15,6 +14,7 @@ export default function Card(prop) {
           className={styles.progressBar}
           style={{
             width: `${percent}%`,
+            backgroundColor: [color],
           }}
         />
       </div>

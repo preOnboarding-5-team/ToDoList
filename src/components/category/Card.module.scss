@@ -16,7 +16,7 @@
 }
 
 .totalTasks {
-  margin: 25px 0 5px;
+  margin: 10px 0 10px;
   font-size: 11px;
   font-weight: 600;
   color: colors.$TASKS_TITLE;
@@ -24,7 +24,7 @@
 }
 
 .categoryTitle {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   font-size: 22px;
   font-weight: 600;
 }
@@ -46,7 +46,6 @@
     position: absolute;
     display: block;
     height: 100%;
-    background-color: rgba(colors.$TEAL, 1);
     border-radius: 10px;
     transition: width 0.2s;
   }
