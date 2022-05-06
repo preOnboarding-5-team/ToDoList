@@ -10,10 +10,15 @@ export default function Card(prop) {
     <div className={styles.card}>
       <p className={styles.totalTasks}>{todo.length} tasks</p>
       <p className={styles.categoryTitle}>{todo[0].category}</p>
-      <div className={styles.slider}>
-        <div className={styles.sliderBase} />
-        <div className={styles.sliderColor} style={{ width: `${percent}%` }} />
+      <div className={styles.progress}>
+        <span
+          className={styles.progressBar}
+          style={{
+            width: `${percent}%`,
+          }}
+        />
       </div>
+      <div className={styles.percentage}>{Math.floor(percent)}%</div>
     </div>
   );
 }
