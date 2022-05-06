@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import styles from './Category.module.scss';
+import Card from './Card';
 
 function Category({ categories, todoList }) {
   const [categoryList, setCategoryList] = useState({});
@@ -38,27 +39,9 @@ function Category({ categories, todoList }) {
   return (
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div ref={containerRef} className={styles.container} onMouseDown={onMouseDown}>
-      {Object.keys(categoryList).map((category, idx) => {
-        const key = `card-key-${idx}`;
-        const total = categoryList[category].length;
-        const done = categoryList[category].filter((todo) => todo.done).length;
-        const doneRatio = (100 / total) * done;
-        return (
-          <div key={key} className={styles.card}>
-            <div className={styles.total}>{total} tasks</div>
-            <div className={styles.title}>{category}</div>
-            <div className={styles.progress}>
-              <span
-                className={styles.progressBar}
-                style={{
-                  width: `${doneRatio}%`,
-                }}
-              />
-            </div>
-            <div className={styles.percentage}>{Math.floor(doneRatio)}%</div>
-          </div>
-        );
-      })}
+      {Object.keys(categoryList).map((category) => (
+        <Card todo={categoryList[category]} />
+      ))}
     </div>
   );
 }

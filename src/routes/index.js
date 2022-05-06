@@ -1,5 +1,5 @@
 import styles from './Routes.module.scss';
-import TodoList from './TodoList';
+import TodoList from './TodoList/index';
 
 function App() {
   return (

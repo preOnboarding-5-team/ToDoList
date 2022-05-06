@@ -58,7 +58,7 @@ function TodoList() {
   const [todoList, setTodoList] = useState(INIT_TODO);
   const [categories, setCategories] = useState(CATEGORIES);
 
-  const handleAddClick = (e) => {
+  const handleAddClick = () => {
     // console.log('handleAddClick')
   };
 
@@ -79,6 +79,7 @@ function TodoList() {
       <input className="button" />
       <div className={styles.centering}>
         <h1>Hi! this is your assignment.</h1>
+        <p className={styles.tasksTitle}>CATEGORIES</p>
         <Category categories={categories} todoList={todoList} />
         <ul className={styles.tasks}>
           <p className={styles.tasksTitle}>Today&apos;s</p>
