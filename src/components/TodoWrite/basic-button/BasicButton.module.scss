@@ -1,0 +1,18 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/constants/levels';
+@use '/src/styles/mixins/flexbox';
+@use '/src/styles/mixins/position';
+
+.basicButton {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  font-size: 16px;
+  border-radius: 24px;
+
+  .svgWrap {
+    width: 28px;
+    height: 28px;
+    margin: 0 auto;
+  }
+}

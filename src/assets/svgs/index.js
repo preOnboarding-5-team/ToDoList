@@ -1,2 +1,9 @@
 export { ReactComponent as LogoImage } from './logo.svg';
 export { ReactComponent as CheckIcon } from './check.svg';
+export { ReactComponent as CalendarIcon } from './calendar.svg';
+export { ReactComponent as FolderIcon } from './folder_icon.svg';
+export { ReactComponent as FlagIcon } from './flag_icon.svg';
+export { ReactComponent as MoonIcon } from './moon_icon.svg';
+export { ReactComponent as ColorChipIcon } from './colorChip_icon.svg';
+export { ReactComponent as CloseIcon } from './close_icon.svg';
+export { ReactComponent as UpIcon } from './up_icon.svg';

@@ -1,0 +1,26 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/constants/levels';
+@use '/src/styles/mixins/flexbox';
+@use '/src/styles/mixins/position';
+@use '/src/styles/mixins/animation';
+
+.todoWrite {
+  @include position.absolute(0 auto auto 0);
+  @include flexbox.flexbox(center center); ///
+  z-index: levels.$MODAL;
+  width: 360px;
+  height: 720px;
+  padding: 60px 40px 40px;
+  background-color: #fafbfe;
+  border-radius: 60px;
+  transition: 1s;
+
+  .centering {
+    @include position.relative(-15% auto auto auto); ///
+  }
+}
+
+.closing {
+  opacity: 0;
+  transform: translateY(-5%);
+}

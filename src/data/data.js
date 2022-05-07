@@ -50,7 +50,9 @@ export const INIT_TODO = [
 ];
 
 export const CATEGORIES = [
-  { id: 1, category: '쇼핑', color: 'blue' },
+  { id: 1, category: '쇼핑', color: 'red' },
   { id: 2, category: '공부', color: 'yellow' },
-  { id: 3, category: '운동', color: 'purple' },
+  { id: 3, category: '운동', color: 'green' },
+  { id: 4, category: '청소', color: 'blue' },
+  { id: 5, category: '기타', color: 'purple' },
 ];

@@ -1,0 +1,37 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/constants/levels';
+@use '/src/styles/mixins/flexbox';
+@use '/src/styles/mixins/position';
+@use '/src/styles/mixins/animation';
+
+.buttonWraps {
+  @include animation.fadeInSlide(1s, 350ms);
+
+  .buttonsWrapper {
+    @include flexbox.flexbox(center center);
+    height: 48px;
+
+    .blue {
+      svg {
+        color: colors.$BLUE;
+      }
+    }
+  }
+
+  .wrapButtons {
+    @include position.posCenterX;
+    @include flexbox.flexbox(center center);
+    justify-content: space-between;
+    width: 200px;
+    margin-top: 80px;
+
+    svg {
+      color: colors.$TASKS_TITLE;
+      transition: 0.2s;
+
+      &:hover {
+        color: rgba(colors.$BLACK, 85%);
+      }
+    }
+  }
+}
