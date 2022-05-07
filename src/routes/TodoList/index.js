@@ -1,7 +1,8 @@
+
 import { useState } from 'react';
 import styles from './TodoList.module.scss';
-import { CheckIcon } from '../../assets/svgs';
 import Category from '../../components/category/Category';
+import Task from '../../components/task/Task';
 
 function TodoList({ INIT_TODO, CATEGORIES }) {
   const [todoList, setTodoList] = useState(INIT_TODO);
@@ -30,18 +31,7 @@ function TodoList({ INIT_TODO, CATEGORIES }) {
         <h1>Hi! this is your assignment.</h1>
         <p className={styles.tasksTitle}>CATEGORIES</p>
         <Category categories={categories} todoList={todoList} />
-        <ul className={styles.tasks}>
-          <p className={styles.tasksTitle}>Today&apos;s</p>
-          {todoList.map((todo) => (
-            <li key={`todo-${todo.id}`} className={styles.task}>
-              <div className={styles.checkboxWrapper}>
-                <input type="checkbox" checked={todo.done} data-id={todo.id} onChange={handleChange} />
-                <CheckIcon />
-              </div>
-              <p className={styles.title}>{todo.title}</p>
-            </li>
-          ))}
-        </ul>
+        <Task todoList={todoList} setTodoList={setTodoList} categories={categories} />
         <button type="button" className={styles.addButton} onClick={handleAddClick} aria-label="Add button" />
       </div>
     </div>
