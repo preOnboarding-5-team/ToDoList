@@ -28,7 +28,7 @@
 }
 
 .submittedTitleHidden {
-  @include position.absolute(25% auto auto 0);
+  @include position.absolute(25% auto auto -4px);
   z-index: levels.$MODAL;
   width: 360px;
   height: 92px;
@@ -43,7 +43,7 @@
 
 .submittedTitleSpan {
   position: relative;
-  left: 4px;
+  left: -2px;
   margin-right: 16px;
 }
 
@@ -64,7 +64,7 @@
   border-radius: 66px;
 
   .checkboxWrapper {
-    @include position.absolute(auto auto auto 24px);
+    @include position.absolute(auto auto auto 21px);
     z-index: levels.$MODAL;
     width: 24px;
     height: 24px;
@@ -75,7 +75,7 @@
 
   span {
     position: relative;
-    left: 4px;
+    left: 0;
   }
 
   @keyframes fadeIn {
