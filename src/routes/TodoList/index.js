@@ -1,9 +1,9 @@
-
 import { useState } from 'react';
 import styles from './TodoList.module.scss';
 import Category from '../../components/category/Category';
 import Task from '../../components/task/Task';
-
+import TodoWrite from '../../components/TodoWrite';
+import AddButton from '../../components/button-add';
 import { CheckIcon } from '../../assets/svgs';
 
 function TodoList({ INIT_TODO, CATEGORIES }) {
@@ -11,8 +11,7 @@ function TodoList({ INIT_TODO, CATEGORIES }) {
   const [categories] = useState(CATEGORIES);
   const [isWriting, setIsWriting] = useState(false);
 
-  const handleAddClick = () => {
-  };
+  const handleAddClick = () => {};
 
   const handleChange = (e) => {
     const { dataset, checked } = e.currentTarget;
