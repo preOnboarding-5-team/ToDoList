@@ -91,9 +91,13 @@ h1 {
   }
 
   .title {
+    width: 100%;
+    max-height: 80%;
     font-size: 0.85em;
     color: colors.$TASK_ITEM_TITLE;
     text-overflow: ellipsis;
+    word-break: break-all;
+    word-wrap: break-word;
     user-select: none;
   }
 

@@ -19,7 +19,7 @@
 }
 
 .submitTitleWrapperVisible {
-  @include position.absolute(372px auto auto auto);
+  @include position.absolute(373px auto auto auto);
   z-index: levels.$MODAL;
   width: 280px;
   height: 72px;

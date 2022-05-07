@@ -105,8 +105,6 @@ function Task({ todoList, setTodoList, categories, containerRef }) {
     );
   });
 
-  // const containerRef = useRef();
-
   let position = { top: 0, y: 0 };
 
   const onMouseMove = (e) => {
