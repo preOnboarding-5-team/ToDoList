@@ -16,7 +16,7 @@ function NewTitle({ newTask, isClosing, isSubmitted, isMoving, hasMoved, isCance
             [styles.submittedTitleOn]: isMoving,
           })}
         >
-          <span>{newTask.title}</span>
+          <p className={styles.submittedTitleSpan}>{newTask.title}</p>
           {hasMoved && (
             <div
               className={styles.checkboxWrapper}

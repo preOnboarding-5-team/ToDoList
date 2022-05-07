@@ -9,6 +9,7 @@
   width: 360px;
   height: 720px;
   padding: 60px 40px 40px;
+  overflow: hidden;
   background-color: colors.$BACKGROUND;
   transition: 1s;
 }
@@ -25,7 +26,6 @@
   padding: 0;
   background-color: colors.$WHITE;
   border-radius: 66px;
-  // border: 1px solid black;
 }
 
 .submittedTitleHidden {
@@ -38,11 +38,18 @@
   line-height: 92px;
   color: colors.$BLACK;
   visibility: hidden;
-  background-color: #fafbfe;
+  background-color: colors.$BACKGROUND;
   transition: 1s;
 }
 
+.submittedTitleSpan {
+  position: relative;
+  left: 4px;
+  margin-right: 16px;
+}
+
 .submittedTitleVisible {
+  white-space: nowrap;
   visibility: visible;
   background-color: colors.$WHITE;
 }
@@ -58,12 +65,11 @@
   border-radius: 66px;
 
   .checkboxWrapper {
-    @include position.absolute(auto auto auto 25px);
+    @include position.absolute(auto auto auto 24px);
     z-index: levels.$MODAL;
     width: 28px;
     height: 28px;
     cursor: pointer;
-    // border: 2px solid colors.$BLUE;
     border-radius: 50%;
     animation: 1s fadeIn;
   }

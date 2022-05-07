@@ -15,10 +15,6 @@
   border-radius: 60px;
   transition: 1s;
 
-  * {
-    transition: 1s;
-  }
-
   .centering {
     @include position.relative(-15% auto auto auto); ///
   }

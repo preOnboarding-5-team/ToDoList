@@ -63,12 +63,10 @@
       width: 28px;
       height: 28px;
       cursor: pointer;
-      // border: 2px solid colors.$BLUE;
       border-radius: 50%;
       transition: 0.2s;
 
       &:checked {
-        // background-color: colors.$BLUE;
         border: 0;
 
         ~ svg {
@@ -78,9 +76,10 @@
     }
 
     .title {
+      margin-right: 16px;
       overflow: hidden;
       color: colors.$TASK_ITEM_TITLE;
-      text-overflow: ellipsis;
+      text-overflow: ellipsis '';
       white-space: nowrap;
     }
   }
