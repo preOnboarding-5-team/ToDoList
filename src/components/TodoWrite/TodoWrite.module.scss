@@ -6,7 +6,7 @@
 
 .todoWrite {
   @include position.absolute(0 auto auto 0);
-  @include flexbox.flexbox(center center); ///
+  @include flexbox.flexbox(center center);
   z-index: levels.$MODAL;
   width: 360px;
   height: 720px;
@@ -16,7 +16,7 @@
   transition: 1s;
 
   .centering {
-    @include position.relative(-15% auto auto auto); ///
+    @include position.relative(-15% auto auto auto);
   }
 }
 

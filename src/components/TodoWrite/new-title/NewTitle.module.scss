@@ -19,12 +19,11 @@
 }
 
 .submitTitleWrapperVisible {
-  @include position.absolute(250px auto auto auto);
+  @include position.absolute(365px auto auto auto);
   z-index: levels.$MODAL;
   width: 280px;
   height: 72px;
   padding: 0;
-  background-color: colors.$WHITE;
   border-radius: 66px;
 }
 
@@ -58,17 +57,17 @@
   @include position.absolute(0 auto auto 0);
   @include flexbox.flexbox(center center);
   width: 280px;
-  height: 72px;
-  padding: 0 72px;
-  font-size: 17px;
-  line-height: 72px;
+  height: 60px;
+  padding: 0 68px;
+  font-size: 0.85em;
+  line-height: 60px;
   border-radius: 66px;
 
   .checkboxWrapper {
     @include position.absolute(auto auto auto 24px);
     z-index: levels.$MODAL;
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
     cursor: pointer;
     border-radius: 50%;
     animation: 1s fadeIn;

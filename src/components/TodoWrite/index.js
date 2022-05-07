@@ -7,7 +7,7 @@ import ButtonClose from './button-close';
 import ButtonNewTask from './button-newTask';
 import NewTitle from './new-title';
 
-function TodoWrite({ todoList, setTodoList, setIsWriting, CATEGORY }) {
+function TodoWrite({ todoList, setTodoList, setIsWriting, taskListRef, CATEGORY }) {
   const [isClosing, setIsClosing] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isMoving, setIsMoving] = useState(false);
@@ -33,6 +33,8 @@ function TodoWrite({ todoList, setTodoList, setIsWriting, CATEGORY }) {
   const submitTaskValue = () => {
     setIsClosing(true);
     setIsSubmitted(true);
+
+    taskListRef.current.scrollTo(0, 0);
 
     setTimeout(() => {
       setIsMoving(true);

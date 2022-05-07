@@ -1,9 +1,9 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import styles from './Task.module.scss';
 import { CheckIcon } from '../../assets/svgs';
 import DeleteIcon from '../../assets/pngs/delete.png';
 
-function Task({ todoList, setTodoList, categories }) {
+function Task({ todoList, setTodoList, categories, containerRef }) {
   const [isDrag, setIsDrag] = useState(false);
   const [locationX, setLocationX] = useState(null);
   const [taskWidth, setTaskWidth] = useState(null);
@@ -105,7 +105,7 @@ function Task({ todoList, setTodoList, categories }) {
     );
   });
 
-  const containerRef = useRef();
+  // const containerRef = useRef();
 
   let position = { top: 0, y: 0 };
 
