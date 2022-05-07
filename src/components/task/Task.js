@@ -19,25 +19,6 @@ function Task({ todoList, setTodoList, categories }) {
     });
   };
 
-  const handleMouseDown = (e) => {
-    setLocationX(e.pageX);
-    const { id } = e.currentTarget.dataset;
-    setDragTarget(id);
-    setTaskWidth(e.currentTarget.getBoundingClientRect().width);
-    setIsDrag(true);
-  };
-  const handleMouseUp = () => {
-    setIsDrag(false);
-  };
-  const handleMouseMove = (e) => {
-    const { id } = e.currentTarget.dataset;
-    const mouseMovePositionX = e.pageX;
-    const dragDistance = locationX - mouseMovePositionX;
-    if (isDrag && id === dragTarget && dragDistance >= 80) {
-      e.currentTarget.style.transform = `translateX(-${taskWidth / 2}px)`;
-    }
-  };
-
   const changeSlideStyle = (taskNode, taskList) => {
     taskNode.style.transform = `translateX(${taskWidth / 4}px)`;
     taskNode.style.opacity = '0';
@@ -61,6 +42,51 @@ function Task({ todoList, setTodoList, categories }) {
 
   const handleUndoTodo = (e) => {
     e.target.offsetParent.style.transform = 'translateX(0)';
+  };
+
+  const handleMouseDown = (e) => {
+    setLocationX(e.pageX);
+    const { id } = e.currentTarget.dataset;
+    setDragTarget(id);
+    setTaskWidth(e.currentTarget.getBoundingClientRect().width);
+    setIsDrag(true);
+  };
+
+  const handleMouseUp = () => {
+    setIsDrag(false);
+  };
+
+  const handleMouseMove = (e) => {
+    const { id } = e.currentTarget.dataset;
+    const mouseMovePositionX = e.pageX;
+    const dragDistance = locationX - mouseMovePositionX;
+    if (isDrag && id === dragTarget && dragDistance >= 80) {
+      e.currentTarget.style.transform = `translateX(-${taskWidth / 2}px)`;
+    }
+  };
+
+  let position = { top: 0, y: 0 };
+  const containerRef = useRef();
+
+  const onMouseMove = (e) => {
+    const y = e.clientY - position.y;
+    if (Math.abs(y) > 15) {
+      containerRef.current.scrollTop = position.top - y;
+    }
+  };
+
+  const onMouseUp = () => {
+    document.removeEventListener('mousemove', onMouseMove);
+    document.removeEventListener('mouseup', onMouseUp);
+  };
+
+  const onMouseDown = (e) => {
+    position = {
+      top: containerRef.current.scrollTop,
+      y: e.clientY,
+    };
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', onMouseUp);
   };
 
   const list = todoList.map((todo) => {
@@ -104,31 +130,6 @@ function Task({ todoList, setTodoList, categories }) {
       </li>
     );
   });
-
-  const containerRef = useRef();
-
-  let position = { top: 0, y: 0 };
-
-  const onMouseMove = (e) => {
-    const y = e.clientY - position.y;
-    if (Math.abs(y) > 15) {
-      containerRef.current.scrollTop = position.top - y;
-    }
-  };
-
-  const onMouseUp = () => {
-    document.removeEventListener('mousemove', onMouseMove);
-    document.removeEventListener('mouseup', onMouseUp);
-  };
-
-  const onMouseDown = (e) => {
-    position = {
-      top: containerRef.current.scrollTop,
-      y: e.clientY,
-    };
-    document.addEventListener('mousemove', onMouseMove);
-    document.addEventListener('mouseup', onMouseUp);
-  };
 
   return (
     <ul ref={containerRef} onMouseDown={onMouseDown} role="presentation" className={styles.taskContainer}>
