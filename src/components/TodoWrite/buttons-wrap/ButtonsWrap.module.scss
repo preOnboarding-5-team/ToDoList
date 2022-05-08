@@ -27,6 +27,11 @@
 
     svg {
       color: colors.$TASKS_TITLE;
+      transition: 0.2s;
+
+      &:hover {
+        color: rgba(colors.$BLACK, 85%);
+      }
     }
   }
 }
