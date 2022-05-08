@@ -5,8 +5,7 @@ import Task from '../../components/task/Task';
 import TodoWrite from '../../components/TodoWrite';
 import AddButton from '../../components/button-add';
 
-function TodoList({ INIT_TODO, CATEGORIES, openMenu, clickMenuBtn, handleOpenMenu }) {
-  const [todoList, setTodoList] = useState(INIT_TODO);
+function TodoList({ INIT_TODO, CATEGORIES, openMenu, clickMenuBtn, handleOpenMenu, todoList, setTodoList }) {
   const [categories] = useState(CATEGORIES);
   const [isWriting, setIsWriting] = useState(false);
 
@@ -15,8 +14,10 @@ function TodoList({ INIT_TODO, CATEGORIES, openMenu, clickMenuBtn, handleOpenMen
   return (
     <div className={styles.todoList} ref={clickMenuBtn}>
       <div className={styles.menuIconWrapper}>
-        <label htmlFor='menuIcon' className={styles.menuIcon}>=</label>
-        <input name='menuIcon' type='checkbox' checked={openMenu} onChange={handleOpenMenu} />
+        <label htmlFor="menuIcon" className={styles.menuIcon}>
+          =
+        </label>
+        <input name="menuIcon" type="checkbox" checked={openMenu} onChange={handleOpenMenu} />
       </div>
       <input className="button" />
       <div className={styles.centering}>
@@ -38,6 +39,6 @@ function TodoList({ INIT_TODO, CATEGORIES, openMenu, clickMenuBtn, handleOpenMen
       )}
     </div>
   );
-} 
+}
 
 export default TodoList;

@@ -1,0 +1,21 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/constants/levels';
+@use '/src/styles/mixins/flexbox';
+@use '/src/styles/mixins/position';
+
+.userImageWrapper {
+  display: flex;
+  width: 80px;
+  height: 80px;
+  margin: 0 0 24px;
+  border-radius: 70%;
+
+  .userImage {
+    display: flex;
+    width: 92%;
+    height: 92%;
+    margin: auto;
+    border: 5px solid #131f53;
+    border-radius: 70%;
+  }
+}
