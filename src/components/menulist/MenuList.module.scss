@@ -1,0 +1,34 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/constants/levels';
+@use '/src/styles/mixins/flexbox';
+@use '/src/styles/mixins/position';
+
+.menusTitle {
+  margin: 10px 0;
+  font-size: 13px;
+  font-weight: 300;
+  color: colors.$GRAYD;
+  letter-spacing: 0.05em;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.menulist {
+  margin-top: 30px;
+}
+
+.userMenu {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  margin: 12px 0;
+}
+
+.menuIcon {
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+  opacity: 0.5;
+}
