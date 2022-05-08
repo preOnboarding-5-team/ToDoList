@@ -19,7 +19,7 @@
 }
 
 .submitTitleWrapperVisible {
-  @include position.absolute(400px auto auto auto);
+  @include position.absolute(390.5px auto auto auto);
   z-index: levels.$MODAL;
   width: 280px;
   height: 72px;
@@ -55,7 +55,6 @@
 
 .submittedTitleOn {
   @include position.absolute(0 auto auto 0);
-  @include flexbox.flexbox(center, center);
   width: 280px;
   height: 60px;
   padding: 0 68px;
@@ -71,11 +70,6 @@
     cursor: pointer;
     border-radius: 50%;
     animation: 1s fadeIn;
-  }
-
-  span {
-    position: relative;
-    left: 0;
   }
 
   @keyframes fadeIn {
