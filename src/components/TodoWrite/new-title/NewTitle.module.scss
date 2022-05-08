@@ -63,7 +63,7 @@
   border-radius: 66px;
 
   .checkboxWrapper {
-    @include position.absolute(auto auto auto 21px);
+    @include position.absolute(18px auto auto 21px);
     z-index: levels.$MODAL;
     width: 24px;
     height: 24px;

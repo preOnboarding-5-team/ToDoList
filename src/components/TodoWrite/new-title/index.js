@@ -2,6 +2,7 @@ import cn from 'classnames';
 import styles from './NewTitle.module.scss';
 
 function NewTitle({ newTask, isClosing, isSubmitted, isMoving, hasMoved, isCanceled, categoryValue }) {
+  console.log(hasMoved);
   return (
     <div
       className={cn(styles.submitTitleWrapper, {
