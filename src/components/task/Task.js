@@ -63,6 +63,29 @@ function Task({ todoList, setTodoList, categories, containerRef }) {
     e.target.offsetParent.style.transform = 'translateX(0)';
   };
 
+  let position = { top: 0, y: 0 };
+
+  const onMouseMove = (e) => {
+    const y = e.clientY - position.y;
+    if (Math.abs(y) > 15) {
+      containerRef.current.scrollTop = position.top - y;
+    }
+  };
+
+  const onMouseUp = () => {
+    document.removeEventListener('mousemove', onMouseMove);
+    document.removeEventListener('mouseup', onMouseUp);
+  };
+
+  const onMouseDown = (e) => {
+    position = {
+      top: containerRef.current.scrollTop,
+      y: e.clientY,
+    };
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', onMouseUp);
+  };
+
   const list = todoList.map((todo) => {
     const { color } = categories.find((categoryName) => categoryName.category === todo.category);
     const categoryColor = { backgroundColor: todo.done ? `${color}` : '', border: `2px solid ${color}` };
@@ -104,29 +127,6 @@ function Task({ todoList, setTodoList, categories, containerRef }) {
       </li>
     );
   });
-
-  let position = { top: 0, y: 0 };
-
-  const onMouseMove = (e) => {
-    const y = e.clientY - position.y;
-    if (Math.abs(y) > 15) {
-      containerRef.current.scrollTop = position.top - y;
-    }
-  };
-
-  const onMouseUp = () => {
-    document.removeEventListener('mousemove', onMouseMove);
-    document.removeEventListener('mouseup', onMouseUp);
-  };
-
-  const onMouseDown = (e) => {
-    position = {
-      top: containerRef.current.scrollTop,
-      y: e.clientY,
-    };
-    document.addEventListener('mousemove', onMouseMove);
-    document.addEventListener('mouseup', onMouseUp);
-  };
 
   return (
     <ul ref={containerRef} onMouseDown={onMouseDown} role="presentation" className={styles.taskContainer}>
