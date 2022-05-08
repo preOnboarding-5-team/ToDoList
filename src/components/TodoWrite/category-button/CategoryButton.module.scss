@@ -4,7 +4,7 @@
 @use '/src/styles/mixins/position';
 
 .categoryButton {
-  @include flexbox.flexbox(center center);
+  @include flexbox.flexbox(center, center);
   position: relative;
   width: 48px;
   height: 48px;

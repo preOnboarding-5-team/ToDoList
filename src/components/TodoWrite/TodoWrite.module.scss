@@ -6,7 +6,7 @@
 
 .todoWrite {
   @include position.absolute(0 auto auto 0);
-  @include flexbox.flexbox(center center);
+  @include flexbox.flexbox(center, center);
   z-index: levels.$MODAL;
   width: 360px;
   height: 720px;

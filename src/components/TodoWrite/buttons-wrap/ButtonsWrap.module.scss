@@ -8,7 +8,7 @@
   @include animation.fadeInSlide(1s, 350ms);
 
   .buttonsWrapper {
-    @include flexbox.flexbox(center center);
+    @include flexbox.flexbox(center, center);
     height: 48px;
 
     .blue {
@@ -20,8 +20,7 @@
 
   .wrapButtons {
     @include position.posCenterX;
-    @include flexbox.flexbox(center center);
-    justify-content: space-between;
+    @include flexbox.flexbox(between, center);
     width: 200px;
     margin-top: 80px;
 

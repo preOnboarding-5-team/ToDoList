@@ -4,11 +4,14 @@
 @use '/src/styles/mixins/position';
 
 .menusTitle {
+  display: flex;
+  align-items: center;
   margin: 10px 0;
   font-size: 13px;
   font-weight: 300;
   color: colors.$GRAYD;
   letter-spacing: 0.05em;
+  cursor: pointer;
 
   &:hover {
     text-decoration: underline;

@@ -7,7 +7,7 @@ function MenuList() {
       <li key="tamplates" className={styles.userMenu}>
         <p className={styles.menusTitle}>
           <BiBookmark className={styles.menuIcon} />
-          Tamplates
+          Templates
         </p>
       </li>
       <li key="categories" className={styles.userMenu}>

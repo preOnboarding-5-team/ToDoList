@@ -20,7 +20,7 @@ h1 {
 }
 
 .taskContainer {
-  height: 332px;
+  height: 300px;
   margin-top: 8px;
   overflow: auto;
   user-select: none;
@@ -53,7 +53,7 @@ h1 {
   box-shadow: 0 10px 20px 0 rgba(colors.$BLACK, 2%);
 
   .checkboxWrapper {
-    @include flexbox.flexbox(center center);
+    @include flexbox.flexbox(center, center);
     position: relative;
     width: 24px;
     height: 24px;
@@ -114,10 +114,13 @@ h1 {
   letter-spacing: 0.1em;
   user-select: none;
   background-color: transparent;
-  @include flexbox.flexbox(center, center);
+  @include flexbox.flexbox(around, center);
 
   .deleteIcon {
+    padding: 6px;
     color: colors.$GRAYA;
+    border: 1px solid colors.$GRAYD;
+    border-radius: 12px;
 
     img {
       width: 75%;
@@ -127,11 +130,11 @@ h1 {
   }
 
   .deleteText {
-    margin: 0 48px 0 16px;
+    margin: 0 48px 0 0;
   }
 
   .deleteButton {
-    padding: 3px 6px;
+    padding: 8px 6px;
     font-size: 0.6em;
     font-weight: 600;
     letter-spacing: 0.05em;
