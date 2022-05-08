@@ -31,23 +31,25 @@ function TodoWrite({ todoList, setTodoList, setIsWriting, taskListRef, CATEGORY 
   };
 
   const submitTaskValue = () => {
-    setIsClosing(true);
-    setIsSubmitted(true);
+    if (!isClosing) {
+      setIsClosing(true);
+      setIsSubmitted(true);
 
-    taskListRef.current.scrollTo(0, 0);
+      taskListRef.current.scrollTo(0, 0);
 
-    setTimeout(() => {
-      setIsMoving(true);
-    }, 250);
+      setTimeout(() => {
+        setIsMoving(true);
+      }, 250);
 
-    setTimeout(() => {
-      setTodoList((prev) => [newTask, ...prev]);
-      setHasMoved(true);
-    }, 1000);
+      setTimeout(() => {
+        setTodoList((prev) => [newTask, ...prev]);
+        setHasMoved(true);
+      }, 1000);
 
-    setTimeout(() => {
-      setIsWriting(false);
-    }, 2000);
+      setTimeout(() => {
+        setIsWriting(false);
+      }, 2000);
+    }
   };
 
   return (
