@@ -21,8 +21,7 @@
   }
 
   .buttonTitle {
-    @include flexbox.flexbox(center center);
-    justify-content: center;
+    @include flexbox.flexbox(center, center);
 
     .title {
       width: 95px;

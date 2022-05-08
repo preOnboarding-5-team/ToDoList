@@ -8,13 +8,12 @@
   position: relative;
   width: 360px;
   height: 720px;
-  padding: 60px 40px 40px;
+  padding: 50px 40px 40px;
   overflow: hidden;
+  clip-path: inset(0% 0% round 60px);
   background-color: colors.$BACKGROUND;
   border-radius: 60px;
-  overflow: hidden;
   transition: all 0.3s;
-  clip-path: inset(0% 0% round 60px);
 
   .menuIconWrapper {
     position: relative;
@@ -27,9 +26,9 @@
 
     input[type='checkbox'] {
       position: relative;
+      z-index: levels.$CHECK_BOX;
       width: 25px;
       height: 25px;
-      z-index: levels.$CHECK_BOX;
       cursor: pointer;
     }
   }
@@ -69,7 +68,7 @@
     }
 
     .checkboxWrapper {
-      @include flexbox.flexbox(center center);
+      @include flexbox.flexbox(center, center);
       position: relative;
       width: 28px;
       height: 28px;

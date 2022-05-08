@@ -118,10 +118,10 @@ function Task({ todoList, setTodoList, categories, containerRef }) {
             <button type="button" data-id={todo.id} className={styles.deleteIcon} onClick={handleDeleteTodo}>
               <img src={DeleteIcon} alt="delete_icon" />
             </button>
-            <p className={styles.deleteText}>The task was deleted</p>
             <button type="button" data-id={todo.id} className={styles.deleteButton} onClick={handleUndoTodo}>
               UNDO
             </button>
+            <p className={styles.deleteText}>Delete Task?</p>
           </div>
         </div>
       </li>

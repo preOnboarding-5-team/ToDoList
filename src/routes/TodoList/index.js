@@ -5,7 +5,7 @@ import Task from '../../components/task/Task';
 import TodoWrite from '../../components/TodoWrite';
 import AddButton from '../../components/button-add';
 
-function TodoList({ INIT_TODO, CATEGORIES, openMenu, clickMenuBtn, handleOpenMenu, todoList, setTodoList }) {
+function TodoList({ CATEGORIES, openMenu, clickMenuBtn, handleOpenMenu, todoList, setTodoList }) {
   const [categories] = useState(CATEGORIES);
   const [isWriting, setIsWriting] = useState(false);
 
