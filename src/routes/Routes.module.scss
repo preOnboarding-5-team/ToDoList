@@ -6,6 +6,13 @@
   justify-content: center;
   height: 100vh;
   background-color: #dee3f9;
+  // clip-path: inset(11.8% 41% round 60px);
+
+  .componentWrapper {
+    width: 360px;
+    height: 720px;
+    clip-path: inset(0 0 round 60px);
+  }
 }
 
 .appLogo {

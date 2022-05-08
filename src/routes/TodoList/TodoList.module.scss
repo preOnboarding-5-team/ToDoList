@@ -12,7 +12,27 @@
   overflow: hidden;
   background-color: colors.$BACKGROUND;
   border-radius: 60px;
-  // @include visual.noScrollbar();
+  overflow: hidden;
+  transition: all 0.3s;
+  clip-path: inset(0% 0% round 60px);
+
+  .menuIconWrapper {
+    position: relative;
+
+    .menuIcon {
+      position: absolute;
+      font-size: 32px;
+      font-weight: 300;
+    }
+
+    input[type='checkbox'] {
+      position: relative;
+      width: 25px;
+      height: 25px;
+      z-index: levels.$CHECK_BOX;
+      cursor: pointer;
+    }
+  }
 
   h1 {
     font-size: 32px;

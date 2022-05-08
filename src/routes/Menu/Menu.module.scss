@@ -1,0 +1,100 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/constants/levels';
+@use '/src/styles/mixins/flexbox';
+@use '/src/styles/mixins/position';
+
+.menu {
+  position: fixed;
+  width: 360px;
+  height: 720px;
+  padding: 120px 40px 40px;
+  background-color: #0b2350;
+  border-radius: 60px;
+
+  h1 {
+    margin: 0 0 10px;
+    font-size: 32px;
+    font-weight: 600;
+    color: colors.$WHITE;
+  }
+
+  .userImageWrapper {
+    display: flex;
+    width: 80px;
+    height: 80px;
+    margin: 0 0 24px;
+    overflow: hidden;
+    border: 2px solid rgba(colors.$GRAYD, 40%);
+    border-radius: 70%;
+
+    .userImage {
+      display: flex;
+      width: 90%;
+      height: 90%;
+      margin: auto;
+      border: 2px solid #131f53;
+      border-radius: 70%;
+      object-fit: cover;
+    }
+  }
+
+  .menusTitle {
+    margin: 10px 0;
+    font-size: 13px;
+    font-weight: 300;
+    color: colors.$GRAYD;
+    letter-spacing: 0.05em;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .menulist {
+    margin-top: 30px;
+  }
+
+  .userMenu {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    margin: 12px 0;
+  }
+
+  .menuIcon {
+    width: 20px;
+    height: 20px;
+    margin-right: 20px;
+    opacity: 0.5;
+  }
+
+  .closeMenuButton {
+    @include position.absolute(80px 200px);
+    width: 50px;
+    height: 50px;
+    border: 2px solid rgba(colors.$GRAYD, 40%);
+    border-radius: 50%;
+    transition: 0.2s;
+
+    &:hover {
+      border-color: rgba(colors.$BLUE, 90%);
+    }
+
+    &::before,
+    &::after {
+      @include position.middleBox;
+      width: 10px;
+      height: 1px;
+      content: '';
+      background-color: colors.$WHITE;
+      border-right: 0;
+      border-bottom: 0;
+      transform: translate(-60%, -350%) rotate(-45deg);
+    }
+
+    &::after {
+      transform: translate(-60%, 350%) rotate(225deg);
+      transform-origin: center;
+    }
+  }
+}
