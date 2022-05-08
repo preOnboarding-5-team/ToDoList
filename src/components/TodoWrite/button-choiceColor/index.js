@@ -20,6 +20,7 @@ export default function ButtonChoiceColor({ setNewTask, CATEGORY }) {
     });
     setSelectCategory(event.currentTarget.dataset.id);
   };
+
   return (
     <div>
       <button
